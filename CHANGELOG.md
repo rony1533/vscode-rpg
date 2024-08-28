@@ -6,4 +6,6 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ## [Unreleased]
 
-- Initial release
+1.1.3 - Added health points for monsters. When a monster's health reaches zero, it will now automatically be replaced with a different monster.
+
+1.0.2 - Initial release

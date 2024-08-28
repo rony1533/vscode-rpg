@@ -1,6 +1,6 @@
 (function () {
   const monster = document.querySelector('#monster');
-  let counter = 0;
+  const healthIndicator = document.querySelector('.health-indicator');
 
   window.addEventListener('message', event => {
     const message = event.data;
@@ -9,7 +9,10 @@
         updateMonster(message.value);
         break;
       case 'changeMonster':
-        changeMoster(message.src);
+        changeMoster(message.value);
+        break;
+      case 'updateMonsterLife':
+        updateMonsterLife(message.value);
         break;
     }
   });
@@ -25,8 +28,6 @@
           monster.style.animation = 'none';
           monster.style.filter = 'none';
         }, 600);
-
-        counter++;
       } else {
         // Remove o efeito imediatamente se não houver texto
         monster.style.animation = 'none';
@@ -41,6 +42,13 @@
     } else {
         console.error('Elemento de imagem não encontrado');
     }
+  }
+
+  function updateMonsterLife(lifePoints) {
+    let maxLife = 30;
+    let percentLif = (lifePoints / maxLife) *100;
+
+    healthIndicator.style.width = percentLif+'%';
   }
 
 })();

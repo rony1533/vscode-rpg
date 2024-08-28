@@ -1,0 +1,17 @@
+.health-bar {
+  height: 12px;
+  width: 60vw;
+  background-color: #b5b5b5b3;
+  border: 4px #b5b5b5bd solid;
+  border-radius: 2px;
+  align-content: end;
+  margin-right: 8px;
+}
+
+.health-indicator {
+  height: 100%;
+  width: 100%;
+  border-radius: 2px;
+  background: rgba(204, 86, 68, 0.754);
+}
+
